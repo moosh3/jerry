@@ -13,7 +13,7 @@ dependencies = [
     "python-dotenv",
     "openai",
     "azure-ai-textanalytics",
-    "azure-core"
+    "azure-core",
 ]
 
 [build-system]

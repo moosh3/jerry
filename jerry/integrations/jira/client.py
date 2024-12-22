@@ -5,7 +5,7 @@ import re
 from typing import Dict, Any, Optional
 from datetime import datetime
 from jira import JIRA
-from devx.core.config import Settings
+from jerry.core.config import Settings
 
 logger = logging.getLogger(__name__)
 

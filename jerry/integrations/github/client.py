@@ -4,7 +4,7 @@ import logging
 import re
 from typing import Dict, Any, List
 from github import GithubIntegration, Github
-from devx.core.config import Settings
+from jerry.core.config import Settings
 
 logger = logging.getLogger(__name__)
 
@@ -118,7 +118,7 @@ class GitHubClient:
             pr_description = pr.get('body', '')
 
             # Update JIRA tickets based on PR action
-            from devx.api.app import app  # Avoid circular import
+            from jerry.api.app import app  # Avoid circular import
             await app.state.jira.handle_pr_event(pr_url, action, pr_description)
 
             # If PR is opened or synchronized, perform review
@@ -183,7 +183,7 @@ class GitHubClient:
                     diff_info.append("Full contents:\n" + file['contents'])
                 diff_info.append("-" * 40)
 
-            from devx.api.app import app
+            from jerry.api.app import app
             review = await app.state.ai.review_pr(
                 "\n".join(diff_info),
                 repo_context

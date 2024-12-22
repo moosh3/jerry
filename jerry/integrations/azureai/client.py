@@ -5,7 +5,7 @@ from typing import Any, Dict, List
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.textanalytics import TextAnalyticsClient
 from openai import AzureOpenAI
-from devx.core.config import Settings
+from jerry.core.config import Settings
 
 class AzureAIClient:
     """Client for interacting with Azure AI services."""

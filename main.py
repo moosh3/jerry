@@ -2,12 +2,12 @@
 
 import logging
 import uvicorn
-from devx.api.app import create_app
-from devx.core.config import Settings
-from devx.integrations.jira.client import JiraClient
-from devx.integrations.github.client import GitHubClient
-from devx.integrations.slack.client import SlackClient
-from devx.integrations.azureai.client import AzureAIClient
+from jerry.api.app import create_app
+from jerry.core.config import Settings
+from jerry.integrations.jira.client import JiraClient
+from jerry.integrations.github.client import GitHubClient
+from jerry.integrations.slack.client import SlackClient
+from jerry.integrations.azureai.client import AzureAIClient
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

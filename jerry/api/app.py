@@ -4,8 +4,8 @@ import logging
 import hmac
 import hashlib
 from fastapi import FastAPI, Request, Depends, HTTPException
-from devx.core.config import Settings
-from devx.integrations.slack.client import SlackClient
+from jerry.core.config import Settings
+from jerry.integrations.slack.client import SlackClient
 
 logger = logging.getLogger(__name__)
 

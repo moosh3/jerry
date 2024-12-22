@@ -7,7 +7,7 @@ from slack_bolt import App
 from slack_bolt.adapter.fastapi import SlackRequestHandler
 from jira.exceptions import JIRAError
 from github.GithubException import GithubException
-from devx.core.config import Settings
+from jerry.core.config import Settings
 
 logger = logging.getLogger(__name__)
 
