@@ -162,7 +162,7 @@ class JiraClient:
             return match.group(1)
         
         # Default to a configured project key
-        return "DEVX"  # You might want to make this configurable
+        return "PROJ"  # You might want to make this configurable
 
     async def get_ticket_status(self, ticket_id: str) -> str:
         """Get the current status of a ticket."""

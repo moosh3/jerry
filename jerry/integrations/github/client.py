@@ -159,7 +159,7 @@ class GitHubClient:
         """Handle PR comment events."""
         try:
             comment_body = event['comment']['body'].strip().lower()
-            if not comment_body.startswith('/devx review'):
+            if not comment_body.startswith('/jerry review'):
                 logger.info("Ignoring non-review comment")
                 return
 

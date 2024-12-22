@@ -99,9 +99,9 @@ class SlackClient:
     def _setup_command_handlers(self):
         """Set up all command handlers for the Slack app."""
         
-        @self.app.command("/devx")
-        async def handle_devx_command(ack, command, say, body):
-            """Handle the /devx command with various subcommands."""
+        @self.app.command("/jerry")
+        async def handle_jerry_command(ack, command, say, body):
+            """Handle the /jerry command with various subcommands."""
             await ack()
             try:
                 cmd_parts = command['text'].strip().split(maxsplit=1)
@@ -183,12 +183,12 @@ class SlackClient:
             args = command['text'].split()[1:] if len(command['text'].split()) > 1 else []
             
             if not args:
-                raise CommandError("Please provide a ticket ID: `/devx close ticket PROJ-123`")
+                raise CommandError("Please provide a ticket ID: `/jerry close ticket PROJ-123`")
                 
             ticket_id = await self._validate_ticket_id(args[0])
             
             # Verify ticket exists before showing form
-            from devx.api.app import app
+            from jerry.api.app import app
             await app.state.jira.get_issue(ticket_id)
             
             await say({
@@ -238,7 +238,7 @@ class SlackClient:
         try:
             parts = command['text'].split(maxsplit=2)
             if len(parts) < 3:
-                raise CommandError("Please use the format: `/devx update ticket PROJ-123 Your comment here`")
+                raise CommandError("Please use the format: `/jerry update ticket PROJ-123 Your comment here`")
                 
             ticket_id = await self._validate_ticket_id(parts[1])
             comment = parts[2]
@@ -247,7 +247,7 @@ class SlackClient:
                 raise CommandError("Comment must be at least 10 characters long")
             
             # Update the ticket using JIRA client
-            from devx.api.app import app
+            from jerry.api.app import app
             await app.state.jira.add_comment(ticket_id, comment)
             await say(f"✅ Added comment to ticket {ticket_id}")
             
@@ -322,7 +322,7 @@ class SlackClient:
                     raise CommandError("Description must be at least 10 characters long")
                 
                 # Create ticket using JIRA client
-                from devx.api.app import app
+                from jerry.api.app import app
                 ticket = await app.state.jira.create_ticket(title, description)
                 await say(f"✅ Created ticket {ticket.key}")
                 
@@ -342,7 +342,7 @@ class SlackClient:
                     raise CommandError("Closing reason must be at least 10 characters long")
                 
                 # Close ticket using JIRA client
-                from devx.api.app import app
+                from jerry.api.app import app
                 await app.state.jira.close_ticket(ticket_id, reason)
                 await say(f"✅ Closed ticket {ticket_id}")
                 
@@ -364,7 +364,7 @@ class SlackClient:
                 await say(f"🔍 Reviewing PR #{pr_info['number']} in {pr_info['owner']}/{pr_info['repo']}...")
                 
                 # Review PR using GitHub client
-                from devx.api.app import app
+                from jerry.api.app import app
                 review = await app.state.github.review_pr(
                     pr_info['owner'],
                     pr_info['repo'],
