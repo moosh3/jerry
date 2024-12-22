@@ -1,6 +1,6 @@
-# DevX
+# Jerry
 
-DevX is an AI-powered Developer Experience assistant that helps streamline development workflows by integrating JIRA, GitHub, and Slack. It acts as a member of your Developer Experience team, handling PR reviews, ticket management, and team communication.
+Jerry is an AI-powered Developer Experience assistant that helps streamline development workflows by integrating JIRA, GitHub, and Slack. It acts as a member of your Developer Experience team, handling PR reviews, ticket management, and team communication.
 
 ## Features
 
@@ -24,8 +24,8 @@ DevX is an AI-powered Developer Experience assistant that helps streamline devel
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-org/devx.git
-cd devx
+git clone https://github.com/your-org/jerry.git
+cd jerry
 ```
 
 2. Install dependencies using `uv`:
@@ -77,7 +77,7 @@ AZURE_ENDPOINT=your_endpoint
 
 Run the FastAPI server:
 ```bash
-python -m devx.main
+python -m jerry.main
 ```
 
 The server will start on `http://localhost:8000`.
@@ -86,24 +86,24 @@ The server will start on `http://localhost:8000`.
 
 - Create a ticket:
 ```
-/devx create ticket
+/jerry create ticket
 ```
 
 - Review a PR:
 ```
-/devx review
+/jerry review
 ```
 
 - Update a ticket:
 ```
-/devx update ticket PROJ-123 Your comment here
+/jerry update ticket PROJ-123 Your comment here
 ```
 
 ### GitHub Integration
 
 - Add a JIRA ticket number to your PR description: `PROJ-123`
-- Request a review by commenting: `/devx review`
-- DevX will automatically:
+- Request a review by commenting: `/jerry review`
+- Jerry will automatically:
   - Review new and updated PRs
   - Update linked JIRA tickets
   - Provide technical feedback
@@ -113,8 +113,8 @@ The server will start on `http://localhost:8000`.
 ### Project Structure
 
 ```
-devx/
-├── devx/
+jerry/
+├── jerry/
 │   ├── api/           # FastAPI application
 │   ├── integrations/  # Service integrations
 │   │   ├── github/    # GitHub integration
@@ -150,4 +150,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support, please:
 1. Check the [documentation](docs/)
 2. Open an issue
-3. Contact the DevX team
+3. Contact the Jerry team

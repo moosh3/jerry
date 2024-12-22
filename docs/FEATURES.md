@@ -1,6 +1,6 @@
-# DevX Features
+# Jerry Features
 
-DevX is an AI-powered Developer Experience assistant that integrates with JIRA, GitHub, and Slack to streamline development workflows. Here's a comprehensive overview of its features:
+Jerry is an AI-powered Developer Experience assistant that integrates with JIRA, GitHub, and Slack to streamline development workflows. Here's a comprehensive overview of its features:
 
 ## GitHub Integration
 
@@ -12,7 +12,7 @@ DevX is an AI-powered Developer Experience assistant that integrates with JIRA, 
   - Includes relevant documentation references
 
 - **On-Demand Reviews**
-  - Trigger reviews with `/devx review` comment
+  - Trigger reviews with `/jerry review` comment
   - Comprehensive analysis of PR changes
   - Context-aware feedback based on repository documentation
 
@@ -60,14 +60,14 @@ DevX is an AI-powered Developer Experience assistant that integrates with JIRA, 
 
 ### Commands
 - **JIRA Commands**
-  - `/devx create ticket` - Interactive ticket creation
-  - `/devx close ticket PROJ-123` - Close tickets with reason
-  - `/devx update ticket PROJ-123 comment` - Add comments to tickets
+  - `/jerry create ticket` - Interactive ticket creation
+  - `/jerry close ticket PROJ-123` - Close tickets with reason
+  - `/jerry update ticket PROJ-123 comment` - Add comments to tickets
 
 - **GitHub Commands**
-  - `/devx review` - Interactive PR review flow
-  - `/devx close pr` - Close PRs with comments
-  - `/devx update pr` - Update PR status
+  - `/jerry review` - Interactive PR review flow
+  - `/jerry close pr` - Close PRs with comments
+  - `/jerry update pr` - Update PR status
 
 ### Interactive Features
 - **Form-Based Input**

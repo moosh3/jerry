@@ -1,5 +1,5 @@
 [project]
-name = "devx"
+name = "jerry"
 version = "0.1.0"
 description = "AI Agent for Developer Experience"
 dependencies = [
