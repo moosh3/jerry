@@ -38,7 +38,7 @@ class AzureAIClient:
 
     async def refine_ticket(self, description: str, technical_context: str) -> str:
         """Refine a JIRA ticket with technical context."""
-        with open("devx/prompts/jira_planning.md", "r") as f:
+        with open("jerry/prompts/jira_planning.md", "r") as f:
             prompt = f.read()
         
         response = await self.openai_client.chat.completions.create(
@@ -53,7 +53,7 @@ class AzureAIClient:
 
     async def review_pr(self, pr_diff: str, repo_context: str) -> Dict[str, Any]:
         """Review a pull request."""
-        with open("devx/prompts/pr_review.md", "r") as f:
+        with open("jerry/prompts/pr_review.md", "r") as f:
             prompt = f.read()
         
         response = await self.openai_client.chat.completions.create(
@@ -68,7 +68,7 @@ class AzureAIClient:
 
     async def generate_slack_response(self, message: str, context: str = "") -> str:
         """Generate a response for Slack messages."""
-        with open("devx/prompts/slack_responses.md", "r") as f:
+        with open("jerry/prompts/slack_responses.md", "r") as f:
             prompt = f.read()
         
         response = await self.openai_client.chat.completions.create(

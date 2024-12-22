@@ -1,4 +1,4 @@
-"""FastAPI application for DevX."""
+"""FastAPI application for Jerry."""
 
 import logging
 import hmac
@@ -31,8 +31,9 @@ async def verify_github_webhook(request: Request, settings: Settings) -> None:
 
 def create_app(settings: Settings) -> FastAPI:
     """Create and configure the FastAPI application."""
+
     app = FastAPI(
-        title="DevX",
+        title="Jerry",
         description="AI Agent for Developer Experience",
         version="0.1.0"
     )
@@ -66,8 +67,8 @@ def create_app(settings: Settings) -> FastAPI:
         response = await app.state.ai.generate_slack_response("help")
         await say(response)
     
-    @slack.command("/devx")
-    async def handle_devx_command(ack, command, say):
+    @slack.command("/jerry")
+    async def handle_jerry_command(ack, command, say):
         await ack()
         cmd_text = command['text']
         
@@ -93,7 +94,7 @@ def create_app(settings: Settings) -> FastAPI:
             # Generate AI response for unknown commands
             response = await app.state.ai.generate_slack_response(
                 cmd_text,
-                "Command context: User asked for help with DevX command"
+                "Command context: User asked for help with Jerry command"
             )
             await say(response)
 
