@@ -1,0 +1,21 @@
+[project]
+name = "devx"
+version = "0.1.0"
+description = "AI Agent for Developer Experience"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "jira",
+    "PyGithub",
+    "slack-bolt",
+    "pydantic",
+    "pydantic-settings",
+    "python-dotenv",
+    "openai",
+    "azure-ai-textanalytics",
+    "azure-core"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
